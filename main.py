@@ -1,16 +1,21 @@
+def wellcome():
+    print('Wellcome to the Python calculator.'
+          'A simple project to train a little bit of this linguage')
+
 def calculator():
-    type_math = input('''choose  the type of mathematical calculation you want
+    type_math = input('''Please choose  the type of mathematical calculation you want:
     + for Addition
     - for Subtraction
     * for Multiplication
-    / for Division: ''')
+    / for Division 
+    ''')
 
     operation(type_math)
 
 
 def operation(type_math):
-    x = int(input("Numero x: "))
-    y = int(input("numero y: "))
+    x = float(input("Numero x: "))
+    y = float(input("numero y: "))
 
     if type_math == '+':
         addition(x, y)
@@ -34,19 +39,19 @@ def operation(type_math):
 
 def addition(x, y):
     z = x + y
-    print("O resultado de {} + {} = {}".format(x, y, z))
+    print("O resultado de {:.2f} + {:.2f} = {:.2f}".format(x, y, z))
 
 def subtraction(x, y):
     z = x - y
-    print("O resultado de {} - {} = {}".format(x, y, z))
+    print("O resultado de {:.2f} - {:.2f} = {:.2f}".format(x, y, z))
 
 def multiplication(x, y):
     z = x * y
-    print("O resultado de {} * {} = {}".format(x, y, z))
+    print("O resultado de {:.2f} * {:.2f} = {:.2f}".format(x, y, z))
 
 def division(x, y):
     z = x / y
-    print("O resultado de {} / {} = {}".format(x, y, z))
+    print("O resultado de {:.2f} / {:.2f} = {:.2f}".format(x, y, z))
 
 def again():
     calc_again = input('Do you want to try again? Y for yes and N for no:  ')
@@ -56,6 +61,8 @@ def again():
         pass
     else:
         print('Sorry, the options are only Y or N')
-        return
+        again()
+
+wellcome()
 calculator()
 again()
